@@ -20,9 +20,10 @@ Node * createNode(void *value) {
     return newNode;
 }
 
-//deallocates node
+//deallocates node and data within it
 void destroyNode(Node *node) {
     if (node == NULL) return;
+    if (node -> data != NULL) free(node -> data);
     node -> next = NULL;
     free(node);
 }
